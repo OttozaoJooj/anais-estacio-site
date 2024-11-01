@@ -6,10 +6,18 @@
     <title>Estácio Anais</title>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <?php
-        echo "Salada";
+    <form action="cadastro-docente.php" method="post">
+        <input type="text" name="nome" id="">
+        <input type="email" name="email">
+        <input type="password" name="senha" id="">
+        <input type="text" name="cod_docente" id="">
+        <input type="submit" value="Enviar">
+        
+
+
+    </form>
+
     
-    ?>
+   
 </body>
 </html>
