@@ -1,8 +1,18 @@
 <?php
-$host = 'localhost';
-$dbname = 'sistema_login';
-$user = 'root'; // Altere se necessário
-$pass = ''; // Coloque sua senha aqui
+require_once __DIR__ . '/vendor/autoload.php';
+
+use Dotenv\Dotenv;
+
+// Carrega o .env
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+// Agora você pode acessar as variáveis de ambiente usando $_ENV
+
+$host = $_ENV['DB_HOST'];
+$dbname = $_ENV['DB_NAME'];
+$user = $_ENV['DB_USER']; // Altere se necessário
+$pass = $_ENV['DB_PASS']; // Coloque sua senha aqui
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
