@@ -11,8 +11,8 @@ $dotenv->load();
 
 $host = $_ENV['DB_HOST'];
 $dbname = $_ENV['DB_NAME'];
-$user = $_ENV['DB_USER']; // Altere se necessário
-$pass = $_ENV['DB_PASS']; // Coloque sua senha aqui
+$user = $_ENV['DB_USER'];
+$pass = $_ENV['DB_PASS']; 
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
