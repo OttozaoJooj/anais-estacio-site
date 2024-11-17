@@ -14,7 +14,7 @@
             </div>
             <label for="username">Usuário:</label>
             <input type="text" id="username" name="username" required><br><br>
-            <label for="password">Senha:</label>
+            <label for="password">Senha:</label><br>
             <input type="password" id="password" name="password"><br><br>
             <input type="submit" value="Entrar">
         </div>
