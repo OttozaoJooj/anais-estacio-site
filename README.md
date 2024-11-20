@@ -18,7 +18,8 @@
 # Checklist
 
 ## Database
-- Criar DER (1) [x] 
+- Criar DER (1) [x]
+- Criar o DB (1) []
 
 ## API
 - Criar a API do painel (1) []
