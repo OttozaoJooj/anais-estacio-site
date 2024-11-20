@@ -18,7 +18,7 @@
 # Checklist
 
 ## Database
-- Criar DER (1) [] 
+- Criar DER (1) [x] 
 
 ## API
 - Criar a API do painel (1) []
@@ -41,9 +41,9 @@
 ---
 
 # Níveis de Prioridade
-- 1. Alta (Urgente)
-- 2. Média (Não urgente)
-- 3. Baixa (Opcional)
+- 1 . Alta (Urgente)
+- 2 . Média (Não urgente)
+- 3 . Baixa (Opcional)
 
 ---
 
