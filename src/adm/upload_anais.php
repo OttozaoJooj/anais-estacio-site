@@ -1,5 +1,5 @@
 <?php
-require 'conexao.php';
+require '../../config/conexao.php';
 // Configuração do diretório de upload
 $diretorioUpload = __DIR__."/uploads/anais/";
 // Verifica se o arquivo foi enviado
