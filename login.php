@@ -12,7 +12,7 @@
             <div class="container">
                 <h2 style="text-align: center;">Login</h2>
             </div>
-            <label for="username">Usuário:</label><br>
+            <label for="username">Usuário:</label>
             <input type="text" id="username" name="username" required><br><br>
             <label for="password">Senha:</label><br>
             <input type="password" id="password" name="password"><br><br>
