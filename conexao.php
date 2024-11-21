@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
+
 
 use Dotenv\Dotenv;
 
@@ -8,6 +9,8 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 // Agora você pode acessar as variáveis de ambiente usando $_ENV
+
+
 
 $host = $_ENV['DB_HOST'];
 $dbname = $_ENV['DB_NAME'];

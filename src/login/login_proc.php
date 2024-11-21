@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../config/conexao.php';
+require '../../conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
