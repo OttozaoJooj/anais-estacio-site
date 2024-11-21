@@ -18,19 +18,18 @@
 # Checklist
 
 ## Database
-<<<<<<< HEAD
 - Criar DER (1) [x] 
-=======
 - Criar DER (1) [x]
-- Criar o DB (1) []
->>>>>>> 2ed4b85732d2842050ea9275f2698d920e134c94
+- Criar o DB (1) [x]
+
+(2ed4b85732d2842050ea9275f2698d920e134c94)
 
 ## API
 - Criar a API do painel (1) []
 - Criar a API do login/signin (2) []
 
 ## AJAX
-- Criar o AJAX da Home Page (1) []
+- Criar o AJAX da Home Page (1) [x]
 - Criar o AJAX dos filtros do painel (3) []
 
 ## Front-end
