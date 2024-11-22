@@ -22,7 +22,6 @@
 - Criar DER (1) [x]
 - Criar o DB (1) [x]
 
-(2ed4b85732d2842050ea9275f2698d920e134c94)
 
 ## API
 - Criar a API do painel (1) []
@@ -40,7 +39,7 @@
     - Criar modal do upload de anais (2) []
 
 ## Feature
-- PDF Viewer (3) []
+- PDF Viewer (3) [x]
 
 ---
 
@@ -51,20 +50,4 @@
 
 ---
 
-# Build
 
-## BD Login/Signin
-<p>Criação do banco de dados no mysql, execute esse comando</p>
-
-```sql
--- Crie uma Database sistema login
-CREATE DATABASE sistema_login;
-
-
--- Copie e cole esse comando no console do phpmyadmin na database criada
-CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL
-);
-```
