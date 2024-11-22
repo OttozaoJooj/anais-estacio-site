@@ -1,8 +1,9 @@
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit();
+    // Comentei para testar a rotação
+    //header("Location: login.php");
+    //exit();
 }
 ?>
 

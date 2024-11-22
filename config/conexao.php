@@ -1,10 +1,13 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+// Caminha pra alterar sem apagar o '/vendor/autoload.php'
+require_once '/opt/lampp/htdocs/anais-estacio-site/vendor/autoload.php';
+
 
 use Dotenv\Dotenv;
 
 // Carrega o .env
-$dotenv = Dotenv::createImmutable(__DIR__);
+// Caminho pra alterar
+$dotenv = Dotenv::createImmutable('/opt/lampp/htdocs/anais-estacio-site/');
 $dotenv->load();
 
 // Agora você pode acessar as variáveis de ambiente usando $_ENV
