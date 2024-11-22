@@ -14,13 +14,13 @@
 <body>
     <p>Busca</p>
     <button class="btn">Load</button>
-    <form id="formAnais" enctype="multipart/form-data">
+    <form id="formAnais" enctype="multipart/form-data" >
         <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquisa" class="search">
     </form>
     <div class="result"></div>
 
     
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="master.js"></script>
+    <script src="ajax.js"></script>
 </body>
 </html>

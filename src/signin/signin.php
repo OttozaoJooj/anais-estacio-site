@@ -10,7 +10,7 @@
 
     <div class="card">
         <form action="signin_proc.php" method="post">
-            <label for="name">Nome:</label><br>
+            <label for="nome">Nome:</label><br>
             <input type="text" name="nome" id=""><br><br>
             <label for="text">Código Docente:</label><br>
             <input type="cod_docente" name="cod_docente"><br><br>
@@ -24,7 +24,7 @@
         </form>
     </div>
 
-    
+     
    
 </body>
 </html>

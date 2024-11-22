@@ -26,7 +26,7 @@
 
 ## API
 - Criar a API do painel (1) []
-- Criar a API do login/signin (2) []
+- Criar a API do login/signin (2) [x]
 
 ## AJAX
 - Criar o AJAX da Home Page (1) [x]

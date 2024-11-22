@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/11/2024 às 19:11
+-- Tempo de geração: 22/11/2024 às 03:54
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -34,9 +34,18 @@ CREATE TABLE `anais` (
   `tema` varchar(255) NOT NULL,
   `descricao` text NOT NULL,
   `isbn` varchar(255) NOT NULL,
-  `path` varchar(500) NOT NULL,
-  `fk_id_docente` int(11) DEFAULT NULL
+  `fk_id_docente` int(11) DEFAULT NULL,
+  `create_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `ano` year(4) NOT NULL,
+  `file_path` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `anais`
+--
+
+INSERT INTO `anais` (`id_anais`, `instituicao`, `evento`, `tema`, `descricao`, `isbn`, `fk_id_docente`, `create_at`, `ano`, `file_path`) VALUES
+(1, 'ifpa', '30 reaus', 'tecnologia', 'este evento teve como propósito a apresentação de trabalho da área de Tecnologia da Informação...', '954654654', NULL, '2024-11-22 02:23:53', '2024', 'C:\\xampp\\htdocs\\anais-estacio-site\\src\\adm/uploads/anais/O Lado Bom da Vida - Matthew Quick.pdf');
 
 -- --------------------------------------------------------
 
@@ -71,6 +80,13 @@ CREATE TABLE `docentes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Despejando dados para a tabela `docentes`
+--
+
+INSERT INTO `docentes` (`id_docente`, `nome`, `senha`, `cod_docente`, `fk_id_curso`) VALUES
+(1, 'otto', '12345', '12345', 1);
+
+--
 -- Índices para tabelas despejadas
 --
 
@@ -102,7 +118,7 @@ ALTER TABLE `docentes`
 -- AUTO_INCREMENT de tabela `anais`
 --
 ALTER TABLE `anais`
-  MODIFY `id_anais` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_anais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `cursos`
@@ -114,7 +130,7 @@ ALTER TABLE `cursos`
 -- AUTO_INCREMENT de tabela `docentes`
 --
 ALTER TABLE `docentes`
-  MODIFY `id_docente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_docente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para tabelas despejadas
