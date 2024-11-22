@@ -9,14 +9,14 @@
     
     <!-- Adicione dinamicamente o caminho do pdf no href -->
     <h2>Visualize o PDF</h2>
-    <a href="URL.pdf">Visualizar PDF</a>
+    <a href="uploads\anais\O Lado Bom da Vida - Matthew Quick.pdf" target="_blank">Visualizar PDF</a>
 
     <!-- Adicione dinamicamente o caminho do pdf no src -->
     <h2>Visualizar o PDF</h2>
-    <iframe src="END.pdf" width="70%" height="600px"></iframe>
+    <iframe src="uploads\anais\O Lado Bom da Vida - Matthew Quick.pdf" width="70%" height="600px"></iframe>
     
     <!-- Adicione dinamicamente o caminho do pdf no href -->
     <h2>Baixe o PDF</h2>
-    <a href="URL.pdf" download>Baixar PDF</a>
+    <a href="uploads\anais\O Lado Bom da Vida - Matthew Quick.pdf" download>Baixar PDF</a>
 </body>
 </html>
