@@ -1,15 +1,27 @@
 <?php
-/*session_start();
-if (!isset($_SESSION['cod_docente'])) {
+require_once '../../conexao.php';
+session_start();
+if (!isset($_SESSION['id_docente'])) {
     header("Location: ../login/login.php");
     exit();
 }
-    */
+    
 
-    require_once '../../conexao.php';
+    
     $sql = "SELECT * FROM anais;";
     $stmt = $conn->prepare($sql);
-    
+    $stmt->execute();
+    if($stmt->rowCount() <= 0){
+        die("Nada Retornado!");
+    } else{
+        $rows = $stmt->fetchAll();
+    }
+/*
+    echo '<pre>';
+    print_r($_SESSION);
+    echo '</pre>';
+*/
+
 ?>
 
 <!DOCTYPE html>
@@ -46,18 +58,19 @@ if (!isset($_SESSION['cod_docente'])) {
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($rows as $row):?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>xxx</td>
-                        <td>xxx</td>
-                        <td>xxx</td>
-                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla architecto excepturi ab natus amet facere delectus unde, iure maiores quis fuga ducimus rem! Accusantium, eaque. Quaerat sint cumque velit eum!</td>
-                        <td>xxx</td>
-                        <td>xxx</td>
-                        <td>xxx</td>
-                        <td><button class="btn-update btn btn-primary">Atualizar</button> <button class="btn-delete btn btn-danger">Excluir</button></td>
+                        <th scope="row" class="id"><?= $row["id_anais"]?></th>
+                        <td class="instituicao"><?= $row["instituicao"]?></td>
+                        <td class="evento"><?= $row["evento"]?></td>
+                        <td class="tema"><?= $row["tema"]?></td>
+                        <td class="descricao"><?= $row["descricao"]?></td>
+                        <td class="isbn"><?= $row["isbn"]?></td>
+                        <td class="ano"><?= $row["ano"]?></td>
+                        <td class="nome-arquivo"><?= basename($row["file_path"])?></td>
+                        <td class="acoes"><button class="btn-update btn btn-primary">Atualizar</button> <button class="btn-delete btn btn-danger">Excluir</button> <a class="btn-viewer btn btn-info" href="<?= "uploads/anais/".basename($row["file_path"])?>" target="_blank">Ver</a></td>
                     </tr>
-                    
+                    <?php endforeach;?>
                 </tbody>
 
             </table>   
@@ -127,6 +140,7 @@ if (!isset($_SESSION['cod_docente'])) {
         
                 <label for="arquivo">Arquivo (PDF):</label><br>
                 <input type="file" name="arquivo" accept="application/pdf" required><br><br>
+
 
                 <input type="submit" class="btn btn-success" value="enviar"></input>
                 <button class="close-update btn btn-danger">Fechar</button>
