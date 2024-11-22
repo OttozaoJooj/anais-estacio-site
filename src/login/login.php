@@ -19,5 +19,6 @@
             <input type="submit" value="Entrar">
         </div>
     </form>
+    <a href="../signin/signin.php">Registre-se</a>
 </body>
 </html>
