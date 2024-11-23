@@ -57,9 +57,9 @@ if (!isset($_SESSION['id_docente'])) {
 
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="anais-container">
                     <?php foreach($rows as $row):?>
-                    <tr>
+                    <tr class="anais">
                         <th scope="row" class="id"><?= $row["id_anais"]?></th>
                         <td class="instituicao"><?= $row["instituicao"]?></td>
                         <td class="evento"><?= $row["evento"]?></td>
@@ -117,31 +117,27 @@ if (!isset($_SESSION['id_docente'])) {
 
     <dialog class="update-anais">
         <div class="update-anais-content">
-            <form action="#" method="post">
+            <form action="#" method="post" class="form-update">
                 <h3>atualizar</h3>
                 <label for="instituicao">Instituição:</label><br>
-                <input type="text" name="instituicao" required><br><br>
+                <input type="text" name="instituicao" class="ipt-instituicao" required><br><br>
             
                 <label for="evento">Evento:</label><br>
-                <input type="text" name="evento" required><br><br>
+                <input type="text" name="evento" class="ipt-evento" required><br><br>
 
                 <label for="tema">Tema:</label><br>
-                <input type="text" name="tema" required><br><br>
+                <input type="text" name="tema" class="ipt-tema" required><br><br>
 
                 <label for="descricao">Descrição:</label><br>
-                <textarea name="descricao" id="descricao" maxlength="500"></textarea><br><br>
+                <textarea name="descricao" class="ipt-descricao" maxlength="500"></textarea><br><br>
 
                 <label for="isbn">ISBN: </label><br>
-                <input type="text" name="isbn" required><br><br>
+                <input type="text" name="isbn" class="ipt-isbn" required><br><br>
 
             
                 <label for="ano">Ano:</label><br>
-                <input type="number" name="ano" required><br><br>
+                <input type="number" name="ano" class="ipt-ano" required><br><br>
         
-                <label for="arquivo">Arquivo (PDF):</label><br>
-                <input type="file" name="arquivo" accept="application/pdf" required><br><br>
-
-
                 <input type="submit" class="btn btn-success" value="enviar"></input>
                 <button class="close-update btn btn-danger">Fechar</button>
             </form>
@@ -154,61 +150,8 @@ if (!isset($_SESSION['id_docente'])) {
         <button class="btn-delete-anais-close btn btn-success">Fechar</button>
     </dialog>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        let btnDialogUpload = document.querySelector(".btn-upload");
-        let dialogUpload = document.querySelector(".dialog-upload-anais");
-        let closeDialogUpload = document.querySelector(".close-upload");
-
-        let btnDialogDelete = document.querySelectorAll(".btn-delete");
-        let dialogDelete = document.querySelector(".dialog-delete-anais");
-        let btnDeleteAnais = document.querySelector(".btn-delete-anais");
-        let closeDialogDelete = document.querySelector(".btn-delete-anais-close");
-
-
-
-        let btnDialogUpdate = document.querySelectorAll(".btn-update");
-        let dialogUpdate = document.querySelector(".update-anais");
-        let closeDialogUpdate = document.querySelector(".close-update");
-
-        
-
-        btnDialogUpload.addEventListener("click", function(){
-            dialogUpload.showModal();
-        })
-        closeDialogUpload.addEventListener("click", function(e){
-            e.preventDefault();
-
-            dialogUpload.close();
-        })
-
-        btnDialogUpdate.forEach(btn => {
-            btn.addEventListener("click", function(){
-                dialogUpdate.showModal();
-            })
-        })
-
-        closeDialogUpdate.addEventListener("click", function(){
-                dialogUpdate.close();
-        })
-        
-        btnDialogDelete.forEach(btn =>{
-            btn.addEventListener("click", function(){
-                dialogDelete.showModal();
-            })
-        })
-
-        btnDeleteAnais.addEventListener("click", function(){
-            alert("Anais Apagado!");
-            dialogDelete.close()
-        })
-
-        closeDialogDelete.addEventListener("click", function(){
-            dialogDelete.close();
-        })
-
-
-
-
-    </script>
+    <script src="js/modalFunctios.js"></script>
+    <script src="js/anaisData.js"></script>
+    <script src="js/updateDataAnais.js"></script>
 </body>
 </html>
