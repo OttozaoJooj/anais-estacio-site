@@ -37,9 +37,13 @@
 - Criar o modal de informações do anais na Home Page (2) []
 - Criar o front-end do painel (1) []
     - Criar modal do upload de anais (2) []
+- União do Front-end com Back-end (1) []
 
 ## Feature
 - PDF Viewer (3) [x]
+
+## Details
+- Consistência dos dados de Update e Delete (3) []
 
 ---
 

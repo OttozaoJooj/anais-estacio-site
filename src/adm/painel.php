@@ -57,6 +57,7 @@ if (!isset($_SESSION['id_docente'])) {
 
                     </tr>
                 </thead>
+                <!-- GET das informações dos anais -->
                 <tbody class="anais-container">
                     <?php foreach($rows as $row):?>
                     <tr class="anais">
@@ -80,10 +81,10 @@ if (!isset($_SESSION['id_docente'])) {
     </div>
 
    
-
+    <!-- Create Anais-->
     <dialog class="dialog-upload-anais">
     <div class="card">
-        <form action="upload_anais.php" method="POST" enctype="multipart/form-data">
+        <form action="painel_proc.php" method="POST" enctype="multipart/form-data">
             <h3>criar</h3>
             <label for="instituicao">Instituição:</label><br>
             <input type="text" name="instituicao" required><br><br>
@@ -104,10 +105,12 @@ if (!isset($_SESSION['id_docente'])) {
             <label for="ano">Ano:</label><br>
             <input type="number" name="ano" required><br><br>
         
-
         
             <label for="arquivo">Arquivo (PDF):</label><br>
             <input type="file" name="arquivo" accept="application/pdf" required><br><br>
+
+
+            <input type="hidden" name="tipo_form" value="create">
         
             <input type="submit" value="enviar">
             <button class="close-upload">Fechar</button>
@@ -115,9 +118,11 @@ if (!isset($_SESSION['id_docente'])) {
     </div>
     </dialog>
 
+    <!-- Update Anais-->
+    
     <dialog class="update-anais">
         <div class="update-anais-content">
-            <form action="#" method="post" class="form-update">
+            <form action="painel_proc.php" method="post" class="form-update">
                 <h3>atualizar</h3>
                 <label for="instituicao">Instituição:</label><br>
                 <input type="text" name="instituicao" class="ipt-instituicao" required><br><br>
@@ -137,12 +142,19 @@ if (!isset($_SESSION['id_docente'])) {
             
                 <label for="ano">Ano:</label><br>
                 <input type="number" name="ano" class="ipt-ano" required><br><br>
+
+                <input type="hidden" name="tipo_form" value="update">
+                <input type="hidden" name="id" value="" class="ipt-id">
+                
         
                 <input type="submit" class="btn btn-success" value="enviar"></input>
-                <button class="close-update btn btn-danger">Fechar</button>
             </form>
+            <button class="close-update btn btn-danger">Fechar</button>
+
         </div>
     </dialog>
+
+    <!-- Delete Anais-->
 
     <dialog class="dialog-delete-anais">
         <h2>Tem certeza que deseja excluir esse anais?</h2>
