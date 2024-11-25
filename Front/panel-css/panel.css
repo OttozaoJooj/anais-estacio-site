@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+header{
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0px 0px 10px 10px;
+    display: flex
+}
+
+.logo{
+    text-align: left;
+    width: 95%;
+}
+
+button{
+    text-align: center;
+    border: none;
+    width: 80px;
+    height: 30px;
+    background-color: blue;
+    border-radius: 10px;
+    
+}
+
+h1{
+    padding-top: 60px;
+    font-family: "Outfit", sans-serif;
+    text-align: center; 
+    font-weight: 900;
+    font-size: 50px;
+    color: blue;
+}
+
+p{
+    font-family: "Outfit", sans-serif;
+    text-align: center; 
+    padding-bottom: 30px;
+}
+
+
+section{
+    height: 600px;
+}
+
+/* Estilos para a tabela */
+table {
+    width: 1200px;
+    height: 300px;
+    border-collapse: collapse;
+    font-family: "Outfit", sans-serif;
+    margin: auto; /* Centraliza horizontalmente */
+    position: relative;
+    top: 1%;
+    transform: translateY(0%); /* Centraliza verticalmente */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #e0e0e0;
+}
+
+
+footer{
+    height: 100px;
+    background-color: blue;
+    text-align: center;
+}
+
+footer p{
+    padding-top: 30px;
+    color: aliceblue;
+    font-family: "Outfit", sans-serif;
+}
+
+a {
+    color: aliceblue;
+    font-family: "Outfit", sans-serif;
+    text-decoration: none;
+    padding-inline: 10px;
+}
+
+

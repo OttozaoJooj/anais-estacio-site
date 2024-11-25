@@ -1,1 +1,1 @@
-# Site de Armazenamento de Anais da Estácio referente ao curso de Análise e Desenvolvimento de Sistemas 
+# Front-End de Anais da Estácio referente ao curso de Análise e Desenvolvimento de Sistemas 

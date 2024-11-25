@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+header{
+    padding: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 0px 0px 10px 10px;
+    display: flex
+}
+
+.logo{
+    text-align: left;
+    width: 90%;
+}
+
+button{
+    text-align: center;
+    border: none;
+    width: 200px;
+    height: 30px;
+    background-color: blue;
+    border-radius: 10px 10px 10px 10px;
+    
+}
+
+
+h1{
+    font-family: "Outfit", sans-serif;
+    padding-top: 60px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 50px;
+}
+
+.titulo-branco {
+    color: rgb(32, 32, 32);
+}
+  
+  .titulo-azul {
+    color: blue;
+}
+
+.subtitulo{
+    font-family: "Outfit", sans-serif;
+    text-align: center;
+    padding: 30px;
+}
+
+
+.container {
+    width: 600px;
+    height: 450px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: auto; /* Centraliza horizontalmente */
+    position: relative;
+    top: 1%;
+    transform: translateY(0%); /* Centraliza verticalmente */
+}
+
+h2{
+    text-align: center;
+    padding: 15px;
+    font-family: "Outfit", sans-serif;
+    font-weight: 300;
+    background-color: blue;
+    border-radius: 10px 10px 7px 7px;
+    color: aliceblue;
+}
+
+section{
+    height: 750px;
+}
+
+footer{
+    height: 100px;
+    background-color: blue;
+    text-align: center;
+}
+
+footer p{
+    padding-top: 30px;
+    color: aliceblue;
+    font-family: "Outfit", sans-serif;
+}
+
+a {
+    color: aliceblue;
+    font-family: "Outfit", sans-serif;
+    text-decoration: none;
+    padding-right: 15px;
+    padding: 10px;
+
+}
+
+
