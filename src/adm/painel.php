@@ -110,7 +110,7 @@ if (!isset($_SESSION['id_docente'])) {
             <input type="file" name="arquivo" accept="application/pdf" required><br><br>
 
 
-            <input type="hidden" name="tipo_form" value="create">
+            <input type="hidden" name="tipo-form" value="create">
         
             <input type="submit" value="enviar">
             <button class="close-upload">Fechar</button>
@@ -143,7 +143,7 @@ if (!isset($_SESSION['id_docente'])) {
                 <label for="ano">Ano:</label><br>
                 <input type="number" name="ano" class="ipt-ano" required><br><br>
 
-                <input type="hidden" name="tipo_form" value="update">
+                <input type="hidden" name="tipo-form" value="update">
                 <input type="hidden" name="id" value="" class="ipt-id-update">
                 
         
@@ -159,10 +159,10 @@ if (!isset($_SESSION['id_docente'])) {
     <dialog class="dialog-delete-anais">
         <form action="painel_proc.php" method="post">
             <h2>Tem certeza que deseja excluir esse anais?</h2>
-            <input type="hidden" name="tipo-form" value="delete">
 
-            <!--RECEBER ID DO DICIONÁRIO EM JS-->
+            <input type="hidden" name="tipo-form" value="delete">    
             <input type="hidden" name="id" value="" class="ipt-id-delete">
+            <input type="hidden" name="file-path" value="" class="ipt-file-path">
 
             <input type="submit" class="btn-delete-anais btn btn-danger">Excluir</input>
         </form>    
