@@ -1,0 +1,17 @@
+{
+    "name": "ottom/anais-estacio-site",
+    "autoload": {
+        "psr-4": {
+            "Ottom\\AnaisEstacioSite\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Otto Mozale",
+            "email": "otto.mozale007@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

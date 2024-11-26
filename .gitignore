@@ -1,0 +1,21 @@
+# Arquivo de variáveis de ambiente
+.env
+.env.local
+
+# Dependências do Composer
+/vendor
+
+# Logs
+*.log
+
+# Diretórios temporários ou de cache
+/cache/
+/storage/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Configurações do editor
+.vscode/
+.idea/
