@@ -144,7 +144,7 @@ if (!isset($_SESSION['id_docente'])) {
                 <input type="number" name="ano" class="ipt-ano" required><br><br>
 
                 <input type="hidden" name="tipo_form" value="update">
-                <input type="hidden" name="id" value="" class="ipt-id">
+                <input type="hidden" name="id" value="" class="ipt-id-update">
                 
         
                 <input type="submit" class="btn btn-success" value="enviar"></input>
@@ -157,13 +157,21 @@ if (!isset($_SESSION['id_docente'])) {
     <!-- Delete Anais-->
 
     <dialog class="dialog-delete-anais">
-        <h2>Tem certeza que deseja excluir esse anais?</h2>
-        <button class="btn-delete-anais btn btn-danger">Excluir</button>
-        <button class="btn-delete-anais-close btn btn-success">Fechar</button>
+        <form action="painel_proc.php" method="post">
+            <h2>Tem certeza que deseja excluir esse anais?</h2>
+            <input type="hidden" name="tipo-form" value="delete">
+
+            <!--RECEBER ID DO DICIONÁRIO EM JS-->
+            <input type="hidden" name="id" value="" class="ipt-id-delete">
+
+            <input type="submit" class="btn-delete-anais btn btn-danger">Excluir</input>
+        </form>    
+            <button class="btn-delete-anais-close btn btn-success">Fechar</button>
     </dialog>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/modalFunctios.js"></script>
     <script src="js/anaisData.js"></script>
     <script src="js/updateDataAnais.js"></script>
+    <script src="js/deleteDataAnais.js"></script>
 </body>
 </html>

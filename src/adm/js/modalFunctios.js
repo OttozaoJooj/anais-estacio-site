@@ -41,7 +41,6 @@ btnDialogDelete.forEach(btn =>{
 })
 
 btnDeleteAnais.addEventListener("click", function(){
-    alert("Anais Apagado!");
     dialogDelete.close()
 })
 

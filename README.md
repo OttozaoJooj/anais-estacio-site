@@ -24,7 +24,7 @@
 
 
 ## API
-- Criar a API do painel (1) []
+- Criar a API do painel (1) [x]
 - Criar a API do login/signin (2) [x]
 
 ## AJAX
@@ -38,6 +38,8 @@
 - Criar o front-end do painel (1) []
     - Criar modal do upload de anais (2) []
 - União do Front-end com Back-end (1) []
+- Versão Mobile(1) []
+
 
 ## Feature
 - PDF Viewer (3) [x]

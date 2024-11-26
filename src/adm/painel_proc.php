@@ -68,8 +68,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['arquivo']) && $_POST
 }
 }
 
-
-if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['tipo_form'] === 'update'){
+// Update Anais
+if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['tipo-form'] === 'update'){
     $instituicao = $_POST['instituicao'];
     $evento = $_POST['evento'];
     $tema = $_POST['tema'];
@@ -116,6 +116,51 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['tipo_form'] === 'update'){
     } else{
         die("Erro na consulta: update");
     }
+}
+
+
+// Delete Anais
+if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['tipo-form'] === 'delete'){
+
+    $fkIdDocente = $_SESSION['id_docente'];
+    $idAnais = $_POST['id'];
+
+
+    $sql = 'SELECT anais.id_anais, anais.fk_id_docente,  anais.tema, anais.isbn FROM anais INNER JOIN docentes ON anais.fk_id_docente = docentes.id_docente WHERE anais.fk_id_docente = ? AND docentes.id_docente = ? AND anais.id_anais = ?';
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(1, $fkIdDocente);
+    $stmt->bindParam(2, $fkIdDocente);
+    $stmt->bindParam(3, $idAnais);
+
+    if($stmt->execute()){
+        if($stmt->rowCount() > 0){
+            echo "É permitido fazer Delete!";
+            //print_r($stmt->fetchAll());
+
+
+        } else{
+            echo '<script> alert("Permissão Negada: Não é possível alterar anais de outro usuário! "); </script>';            
+            echo '<script> window.location.href = "painel.php"</script>';
+        };
+    }else{
+        die("Erro na consulta: validação de permissão");
+    }
+
+    // Delete
+    $sql = 'DELETE FROM anais WHERE id_anais = ?';
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(1, $idAnais);
+    
+    if($stmt->execute()){
+        echo "Cláusula Delete Executada";
+        header("location: painel.php");
+
+    } else{
+        echo "Erro na Execução da Cláusula Delete";
+
+    }
+
+
 }
 
 ?>
