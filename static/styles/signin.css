@@ -64,11 +64,12 @@ body{
     font-weight: 500;
 }
 
-.form-content > input{
+.form-content > input, .form-content > select {
+    margin-bottom: 15px;
     border-radius: 10px;
     border: 1px solid #144BC8;
 }
-.form-content > input[type="text"], .form-content > input[type="password"]{
+.form-content > input[type="text"], .form-content > input[type="password"], .form-content > #curso{
     width: 100%;
     padding: 10px;
     font-size: 1.0rem;
@@ -84,29 +85,32 @@ body{
     width: 100%;
     margin-top: 20px;
     border: 2px solid #144BC8;
-    padding: 10px;
+    margin-bottom: 0px;
+    padding: 10px 0px;
     background-color: #144BC8;
     font-size: 1.25rem;
     font-weight: 600;
     color: white;
     cursor: pointer;
-    transition: 0.10s ease-in-out ;
+    transition: 0.10s ease-in-out;
+
 
 
 }
 
 .form-content > input[type="submit"]:hover{
-    transition: 0.10s ease-in-out ;
     background-color: white;
     border: 2px solid #144BC8;
     color: #144BC8;
+    transition: 0.10s ease-in-out;
+
 }
 
-.link-signin{
-    margin-bottom: 10px;
+.link-login{
+    margin-bottom: 0px;
 }
 
-.link-signin > a{
+.link-login > a{
     display: block;
     text-align: end;
     text-decoration: none;
@@ -114,7 +118,7 @@ body{
     font-weight: 600;
 }
 
-.link-signin > a:hover{
+.link-login > a:hover{
     text-decoration: underline;
 
 }
