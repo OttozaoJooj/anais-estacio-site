@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aba de Login</title>
+    <title>Cadastre-se</title>
     <link rel="stylesheet" href="../../static/styles/signin.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,9 @@
     <header>
         <div class="header-img">
             <img src="../../assets/img/logoEstacio.png">
+        </div>
+        <div class="btn-sobre">
+            <button>Sobre</button>
         </div>
     </header>
 
@@ -45,6 +48,7 @@
             </form>
         </div>
     </div>
+    <!--
     <footer>
         <p>Desenvolvido pelos Alunos do Curso de <strong>Analise e Desenvolvimento de Sistemas</strong>  da Estácio Castanhal.</p>
         <p class="links">
@@ -54,6 +58,7 @@
         </p>
         
     </footer>
+-->
 </body>
 </html>
 
