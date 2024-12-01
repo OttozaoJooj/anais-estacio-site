@@ -1,34 +1,33 @@
 <?php 
-    require '../conexao.php'; // Inclui o arquivo de conexão com o banco de dados
+    require '../conexao.php';
 
-    // Captura o valor da pesquisa enviado via AJAX
-    $pesquisa = isset($_GET['pesquisa']) ? $_GET['pesquisa'] : '';
     
-    // Prepara a consulta SQL com o valor da pesquisa
-    $sql = $conn->prepare("SELECT * FROM anais
+    $pesquisa = isset($_GET['pesquisa']) ? $_GET['pesquisa'] : die("Falha no Envio do Ajax");
+    
+
+    
+    $sql = "SELECT id_anais, instituicao, evento, tema, descricao, isbn, ano, create_at, file_path 
+    FROM anais
     WHERE tema LIKE ? 
     OR evento LIKE ?
     OR instituicao LIKE ?
-    OR isbn LIKE ?");
+    OR isbn LIKE ? ;";
 
-    // Executa a consulta com o valor da pesquisa
-    if($sql->execute(["%$pesquisa%", "%$pesquisa%", "%$pesquisa%", "%$pesquisa%"])){
-        echo "consulta realizada com sucesso"."<br>";
-    } else{
-        echo "erro";
+    $stmt = $conn->prepare($sql);
+    /*
+    $stmt->bindParam(':tema', $pesquisa);
+    $stmt->bindParam(':evento', $pesquisa);
+    $stmt->bindParam(':instituicao', $pesquisa);
+    $stmt->bindParam(':isbn', $pesquisa);
+    */
+    
+    if(!$stmt->execute(["%$pesquisa%", "%$pesquisa%", "%$pesquisa%", "%$pesquisa%"])){
+        die("Erro na pesquisa do ajax!");
     }
      
-
-    // Verifica se há resultados e os exibe
-    if($sql->rowCount() > 0) {
-        $values = $sql->fetchAll();
-        foreach($values as $value) {
-            echo "<h1>Tema: " . htmlspecialchars($value["tema"]) . "</h1>";
-            echo "<p>evento: " . htmlspecialchars($value["evento"]) . "</p>";
-            echo "<p>instituição: " . htmlspecialchars($value["instituicao"]) . "</p>";
-            echo "<p>isbn: " . htmlspecialchars($value["isbn"]) . "</p>";
-
-        }
+    if($stmt->rowCount() > 0) {
+        $values = $stmt->fetchAll();
+        echo json_encode($values);
     }
-    echo "recebendo o ajax";
+
 ?>
