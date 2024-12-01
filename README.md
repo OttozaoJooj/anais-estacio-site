@@ -32,12 +32,12 @@
 - Criar o AJAX dos filtros do painel (3) []
 
 ## Front-end
-- Criar o front-end do login/signin (2) []
-- Criar o front-end da Home Page (1) []
-- Criar o modal de informações do anais na Home Page (2) []
+- Criar o front-end do login/signin (2) [x]
+- Criar o front-end da Home Page (1) [x]
+- Criar o modal de informações do anais na Home Page (2) [x]
 - Criar o front-end do painel (1) []
     - Criar modal do upload de anais (2) []
-- União do Front-end com Back-end (1) []
+- União do Front-end com Back-end (1) [x]
 - Versão Mobile(1) []
 
 

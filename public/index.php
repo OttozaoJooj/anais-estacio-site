@@ -10,7 +10,7 @@
 
     </head>
     <body>
-    <!--QUANDO TERMINAR O AJAX, DAR O COMMIT-->
+
         <div class="modal-info-anais">
             <div class="modal-info-anais-content">
                 <div class="btn-close-modal-info">
