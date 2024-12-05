@@ -27,6 +27,7 @@ closeDialogUpload.addEventListener("click", function(e){
 btnDialogUpdate.forEach(btn => {
     btn.addEventListener("click", function(){
         dialogUpdate.showModal();
+
     })
 })
 

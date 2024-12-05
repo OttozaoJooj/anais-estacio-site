@@ -5,9 +5,7 @@ if (!isset($_SESSION['id_docente'])) {
     header("Location: ../login/login.php");
     exit();
 }
-    
 
-    
     $sql = "SELECT * FROM anais;";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
@@ -24,24 +22,29 @@ if (!isset($_SESSION['id_docente'])) {
 
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,400;0,700;0,900;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/styles/panel.css">
+    
 </head>
 <body>
-    <div class="container-fluid p-4">
-        <div class="header d-flex flex-row justify-content-between mb-5">
-            <h1 class="fw-bold">Painel</h1>
-            <div class="content">
-                <button class="btn-upload btn btn-success">Upload Anais</button>
-            </div>    
-        </div>
-
-        <div class="hero">
+    <header class="header">
+        <h1>Painel</h1>
+    </header>
+    <div class="container">
+        <div class="btn-upload-anais">
+            <button class="btn-upload btn">Enviar Anais</button>
+        </div>               
+        <div class="content">
             <table class="table">
                 <thead>
                     <tr>
@@ -69,7 +72,7 @@ if (!isset($_SESSION['id_docente'])) {
                         <td class="isbn"><?= $row["isbn"]?></td>
                         <td class="ano"><?= $row["ano"]?></td>
                         <td class="nome-arquivo"><?= basename($row["file_path"])?></td>
-                        <td class="acoes"><button class="btn-update btn btn-primary">Atualizar</button> <button class="btn-delete btn btn-danger">Excluir</button> <a class="btn-viewer btn btn-info" href="<?= "uploads/anais/".basename($row["file_path"])?>" target="_blank">Ver</a></td>
+                        <td class="acoes"><button class="btn-update btn">Atualizar</button> <button class="btn-delete btn">Excluir</button> <a class="btn-viewer btn" href="<?= "uploads/anais/".basename($row["file_path"])?>" target="_blank">Ver</a></td>
                     </tr>
                     <?php endforeach;?>
                 </tbody>
@@ -77,79 +80,103 @@ if (!isset($_SESSION['id_docente'])) {
             </table>   
 
         </div>
-
     </div>
+    
+
+    
 
    
     <!-- Create Anais-->
     <dialog class="dialog-upload-anais">
-    <div class="card">
-        <form action="painel_proc.php" method="POST" enctype="multipart/form-data">
-            <h3>criar</h3>
-            <label for="instituicao">Instituição:</label><br>
-            <input type="text" name="instituicao" required><br><br>
-        
-            <label for="evento">Evento:</label><br>
-            <input type="text" name="evento" required><br><br>
+        <div class="dialog-upload-anais-content">
+            <div class="close-upload">
+                <img src="../../assets/icons/close-modal-icon.png">
+            </div>
 
-            <label for="tema">Tema:</label><br>
-            <input type="text" name="tema" required><br><br>
+            <form action="painel_proc.php" method="POST" enctype="multipart/form-data">
+                <h3>ENVIAR ANAIS</h3>
+                <label for="instituicao">Instituição:</label>
+                <input type="text" name="instituicao" required>
+            
+                <label for="evento">Evento:</label>
+                <input type="text" name="evento" required>
 
-            <label for="descricao">Descrição:</label><br>
-            <textarea name="descricao" id="descricao" maxlength="500"></textarea><br><br>
+                <label for="tema">Tema:</label>
+                <input type="text" name="tema" required>
 
-            <label for="isbn">ISBN: </label><br>
-            <input type="text" name="isbn" required><br><br>
+                <label for="descricao">Descrição:</label>
+                <textarea name="descricao" id="descricao" maxlength="500" required></textarea>
+                
 
-        
-            <label for="ano">Ano:</label><br>
-            <input type="number" name="ano" required><br><br>
-        
-        
-            <label for="arquivo">Arquivo (PDF):</label><br>
-            <input type="file" name="arquivo" accept="application/pdf" required><br><br>
+                <div class="isbn-ano-group">
+                    
+                    <div class="isbn-group">    
+                        <label for="isbn">ISBN: </label>
+                        <input type="text" name="isbn" required>
+                    </div>
+
+                    <div class="ano-group">
+                        <label for="ano">Ano:</label>
+                        <input type="number" name="ano" required>
+                    </div>
+            
+                    
+                </div>
+                
+            
+            
+                <label for="arquivo">Arquivo (PDF):</label>
+                <input type="file" name="arquivo" accept="application/pdf" required>
 
 
-            <input type="hidden" name="tipo-form" value="create">
-        
-            <input type="submit" value="enviar">
-            <button class="close-upload">Fechar</button>
-        </form>
-    </div>
+                <input type="hidden" name="tipo-form" value="create">
+            
+                <input type="submit" value="ENVIAR">
+            </form>
+        </div>
     </dialog>
 
     <!-- Update Anais-->
     
     <dialog class="update-anais">
         <div class="update-anais-content">
+            <div class="close-update">
+                <img src="../../assets/icons/close-modal-icon.png">
+            </div>
+        
             <form action="painel_proc.php" method="post" class="form-update">
-                <h3>atualizar</h3>
-                <label for="instituicao">Instituição:</label><br>
-                <input type="text" name="instituicao" class="ipt-instituicao" required><br><br>
+                <h3>ATUALIZAR</h3>
+                <label for="instituicao">Instituição:</label>
+                <input type="text" name="instituicao" class="ipt-instituicao" required>
             
-                <label for="evento">Evento:</label><br>
-                <input type="text" name="evento" class="ipt-evento" required><br><br>
+                <label for="evento">Evento:</label>
+                <input type="text" name="evento" class="ipt-evento" required>
 
-                <label for="tema">Tema:</label><br>
-                <input type="text" name="tema" class="ipt-tema" required><br><br>
+                <label for="tema">Tema:</label>
+                <input type="text" name="tema" class="ipt-tema" required>
 
-                <label for="descricao">Descrição:</label><br>
-                <textarea name="descricao" class="ipt-descricao" maxlength="500"></textarea><br><br>
+                <label for="descricao">Descrição:</label>
+                <textarea name="descricao" class="ipt-descricao" maxlength="500" required></textarea>
 
-                <label for="isbn">ISBN: </label><br>
-                <input type="text" name="isbn" class="ipt-isbn" required><br><br>
+                <div class="isbn-ano-group">
+                    <div class="isbn-group">
+                        <label for="isbn">ISBN: </label>
+                        <input type="text" name="isbn" class="ipt-isbn" required>
+                    </div>
 
-            
-                <label for="ano">Ano:</label><br>
-                <input type="number" name="ano" class="ipt-ano" required><br><br>
+                    <div class="ano-group">
+                        <label for="ano">Ano:</label>
+                        <input type="number" name="ano" class="ipt-ano" required>
+                    </div>
+                </div>
 
                 <input type="hidden" name="tipo-form" value="update">
                 <input type="hidden" name="id" value="" class="ipt-id-update">
                 
         
-                <input type="submit" class="btn btn-success" value="enviar"></input>
+                <input type="submit" value="ENVIAR"></input>
             </form>
-            <button class="close-update btn btn-danger">Fechar</button>
+            
 
         </div>
     </dialog>
@@ -158,17 +185,20 @@ if (!isset($_SESSION['id_docente'])) {
 
     <dialog class="dialog-delete-anais">
         <form action="painel_proc.php" method="post">
-            <h2>Tem certeza que deseja excluir esse anais?</h2>
+            <h2>Tem certeza que deseja excluir o anais?</h2>
 
             <input type="hidden" name="tipo-form" value="delete">    
             <input type="hidden" name="id" value="" class="ipt-id-delete">
             <input type="hidden" name="file-path" value="" class="ipt-file-path">
 
-            <input type="submit" class="btn-delete-anais btn btn-danger">Excluir</input>
+            <div class="btn-delete-close">
+                <input type="submit" class="btn-delete-anais" value="EXCLUIR"></input>
+                <a class="btn-delete-anais-close btn">FECHAR</a>
+            </div>
+            
+
         </form>    
-            <button class="btn-delete-anais-close btn btn-success">Fechar</button>
     </dialog>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/modalFunctios.js"></script>
     <script src="js/anaisData.js"></script>
     <script src="js/updateDataAnais.js"></script>

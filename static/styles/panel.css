@@ -1,104 +1,420 @@
-* {
-    padding: 0;
+:root{
+    font-size: 62.5%;
+    --light-blue-primary: #144BC8;
+    --light-black: #222222;
+    --light-blue-secondary: #f2f6ff;
+    --light-green-primary:  #42c029;
+    --light-red-primary: #c81414;
+    --light-violet-primary: #c814c8;
+
+}
+
+*{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, input, button, a, th, td, label, textarea{
+    color: var(--light-black);
+    font-family: 'Montserrat', serif;
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+a{
+    text-decoration: none;
+}
+body{
+    display: flex;
+    
+    min-height: 100vh;
+    background-image: linear-gradient(to right top, #ffffff, #fafaff, #f4f5ff, #edf1ff, #e4edff);
+    padding: 0px 25px;
+    position: relative;
+    flex-direction: column;
+
 }
 
 
-header{
-    padding: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 0px 0px 10px 10px;
-    display: flex
-}
-
-.logo{
-    text-align: left;
-    width: 95%;
-}
-
-button{
-    text-align: center;
-    border: none;
-    width: 80px;
-    height: 30px;
-    background-color: blue;
-    border-radius: 10px;
+.header{
+    margin: 25px 0px;
     
 }
 
-h1{
-    padding-top: 60px;
-    font-family: "Outfit", sans-serif;
-    text-align: center; 
-    font-weight: 900;
-    font-size: 50px;
-    color: blue;
-}
-
-p{
-    font-family: "Outfit", sans-serif;
-    text-align: center; 
-    padding-bottom: 30px;
+.header > h1{
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--light-blue-primary);
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.26);
 }
 
 
-section{
-    height: 600px;
+.container{
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
-/* Estilos para a tabela */
-table {
-    width: 1200px;
-    height: 300px;
-    border-collapse: collapse;
-    font-family: "Outfit", sans-serif;
-    margin: auto; /* Centraliza horizontalmente */
-    position: relative;
-    top: 1%;
-    transform: translateY(0%); /* Centraliza verticalmente */
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-}
-
-table th, table td {
-    padding: 12px;
-    text-align: left;
-}
-
-table th {
-    background-color: #007bff;
+.btn{
+    font-weight: 700;
     color: white;
-    font-weight: bold;
+    font-size: 1.15rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.10s ease-in-out;
+    padding: 7px 15px;
 
 }
 
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+.btn:hover{
+    background-color: transparent;
+    transition: 0.10s ease-in-out;
 }
 
-table tr:hover {
-    background-color: #e0e0e0;
+.btn-upload-anais{
+    text-align: end;
+    margin-bottom: 20px;
+
+}
+
+.btn-upload-anais > button{
+    background-color: var(--light-green-primary);
+    border: 2px solid var(--light-green-primary);
+    padding: 10px 20px;
+    font-size: 1.25rem;
+}
+
+.btn-upload-anais > button:hover{
+    color: var(--light-green-primary);
+    background-color:white;
+
 }
 
 
-footer{
-    height: 100px;
-    background-color: blue;
+.content{
+    background-color: white;
+    border: 1px solid var(--light-blue-primary);
+    box-shadow: 0px 4px 0px var(--light-blue-primary);
+    border-radius: 10px;
+    padding: 30px;
+    max-height: 631px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--light-blue-primary) transparent;
+
+}
+
+.table, th, td{
+    border-collapse: collapse;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th{
+    font-size: 1.50rem;
+    font-weight: 700;
+}
+
+.table > tbody > tr > td{
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+
+.btn-update, .btn-delete, .btn-viewer{
+    display: block;
+    width: 100%;
     text-align: center;
+    margin-bottom: 5px;
 }
 
-footer p{
-    padding-top: 30px;
-    color: aliceblue;
-    font-family: "Outfit", sans-serif;
+.btn-viewer{
+    margin-bottom: 0px;
 }
 
-a {
-    color: aliceblue;
-    font-family: "Outfit", sans-serif;
-    text-decoration: none;
-    padding-inline: 10px;
+.btn-update{
+    background-color: var(--light-blue-primary);
+    border: 2px solid var(--light-blue-primary);
+}
+
+.btn-update:hover{
+    color: var(--light-blue-primary);
+}
+
+.btn-delete{
+    background-color: var(--light-red-primary);
+    border: 2px solid var(--light-red-primary);
+
+}
+
+.btn-delete:hover{
+    color: var(--light-red-primary);
+
+}
+
+.btn-viewer{
+    background-color: var(--light-violet-primary);
+    border: 2px solid var(--light-violet-primary);
+    
+
+}
+
+.btn-viewer:hover{
+    color: var(--light-violet-primary);
+}
+
+.dialog-upload-anais{
+    margin: auto;
+    border: 1px solid var(--light-blue-primary);
+    box-shadow: 0px 4px 0px var(--light-blue-primary);
+    border-radius: 10px;
+}
+
+.dialog-upload-anais-content{
+    position: relative;
+    padding: 45px;
+
+}
+
+.dialog-upload-anais-content > .close-upload{
+    position: absolute;
+    right: 3%;
+    top: 2%;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.dialog-upload-anais-content > form > h3{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.dialog-upload-anais-content > form > label{
+    margin-bottom: 5px;
+    font-size: 1.40rem;
+    font-weight: 600;
+}
+
+.dialog-upload-anais-content > form > textarea{
+    resize: none;
+    height: 100px;
+    line-height: 1.5;
 }
 
 
+.dialog-upload-anais-content > form > label, .dialog-upload-anais-content > form > input,  .dialog-upload-anais-content > form > textarea{
+    display: block;
+    width: 100%;
+}
+
+.dialog-upload-anais-content > form > input, .dialog-upload-anais-content > form > textarea{
+    border-radius: 10px;
+    border: 1px solid var(--light-blue-primary);
+    padding: 10px;
+    font-size: 1.35rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+
+} 
+/*SE APLICA AO MODAL DE UPDATE E UPLOAD*/
+.isbn-ano-group{
+    display: flex;
+    margin-bottom: 15px;
+    column-gap: 15px;
+}
+
+.isbn-group > label, .ano-group > label{
+    margin-bottom: 5px;
+    font-size: 1.40rem;
+    font-weight: 600;
+    display: block;
+    width: 100%;
+}
+
+.isbn-group > input, .ano-group > input{
+    border-radius: 10px;
+    border: 1px solid var(--light-blue-primary);
+    padding: 10px;
+    font-size: 1.35rem;
+    font-weight: 500;
+    
+}
+/*  //  */
+.dialog-upload-anais-content > form > input[type="submit"]{
+    width: 100%;
+    margin-top: 20px;
+    border: 2px solid #144BC8;
+    padding: 10px;
+    background-color: #144BC8;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: 0.10s ease-in-out ;
+    margin-bottom: 0px;
+
+
+}
+
+.dialog-upload-anais-content > form > input[type="submit"]:hover{
+    transition: 0.10s ease-in-out ;
+    background-color: white;
+    border: 2px solid #144BC8;
+    color: #144BC8;
+}
+
+.update-anais{
+    margin: auto;
+    border: 1px solid var(--light-blue-primary);
+    box-shadow: 0px 4px 0px var(--light-blue-primary);
+    border-radius: 10px;
+}
+
+.update-anais-content{
+    position: relative;
+    padding: 45px;
+}
+
+.update-anais-content > .close-update{
+    position: absolute;
+    right: 3%;
+    top: 2%;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.update-anais-content > form > h3{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: 800;
+
+}
+
+.update-anais-content > form > label{
+    margin-bottom: 5px;
+    font-size: 1.40rem;
+    font-weight: 600;
+}
+
+
+.update-anais-content > form > textarea{
+    resize: none;
+    height: 100px;
+    line-height: 1.5;
+}
+
+
+
+.update-anais-content > form > label, .update-anais-content > form > input,  .update-anais-content > form > textarea{
+    display: block;
+    width: 100%;
+}
+
+.update-anais-content > form > input, .update-anais-content > form > textarea{
+    border-radius: 10px;
+    border: 1px solid var(--light-blue-primary);
+    padding: 10px;
+    font-size: 1.35rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+
+} 
+
+.update-anais-content > form > input[type="submit"]{
+    width: 100%;
+    margin-top: 20px;
+    border: 2px solid #144BC8;
+    padding: 10px;
+    background-color: #144BC8;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: 0.10s ease-in-out ;
+    margin-bottom: 0px;
+
+}
+
+.update-anais-content > form > input[type="submit"]:hover{
+    transition: 0.10s ease-in-out ;
+    background-color: white;
+    border: 2px solid #144BC8;
+    color: #144BC8;
+}
+
+
+.dialog-delete-anais{
+    margin: auto;
+    border: 1px solid var(--light-blue-primary);
+    box-shadow: 0px 4px 0px var(--light-blue-primary);
+    border-radius: 10px;
+    position: relative;
+    padding: 35px;
+    max-width: 500px;
+}
+
+.dialog-delete-anais > form > h2{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+
+.btn-delete-close > input{
+    width: 100%;
+    
+    border: 2px solid var(--light-red-primary);
+    padding: 10px;
+    background-color: var(--light-red-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: 0.10s ease-in-out ;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.btn-delete-close > input:hover{
+    transition: 0.10s ease-in-out ;
+    background-color: white;
+    border: 2px solid var(--light-red-primary);
+    color: var(--light-red-primary);
+
+}
+
+
+.btn-delete-close > a{
+    width: 100%;
+    
+    border: 2px solid var(--light-blue-primary);
+    padding: 10px;
+    background-color: var(--light-blue-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: 0.10s ease-in-out ;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.btn-delete-close > a:hover{
+    transition: 0.10s ease-in-out ;
+    background-color: white;
+    border: 2px solid var(--light-blue-primary);
+    color: var(--light-blue-primary);
+}
