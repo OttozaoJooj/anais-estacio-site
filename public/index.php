@@ -68,6 +68,7 @@
 
                     </div>
                     <div class="result-anais-content">
+<!--
                         <hr class="line">
                         <div class="anais">       
                             <div class="tema-modal-info-anais">
@@ -83,9 +84,9 @@
                             <div class="details-anais">
                                 <span class="instituicao">Instituto Federal de Ciência e Tecnologia do Pará - Campus Castanhal</span>
                                 <span class="ano">2024</span>
-                            </div>
+                        </div>
                             
-
+-->
                             
                         </div>
                         
