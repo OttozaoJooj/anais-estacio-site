@@ -21,4 +21,4 @@ Thumbs.db
 .idea/
 
 # Banco de Dados
-.sql
+*.sql
