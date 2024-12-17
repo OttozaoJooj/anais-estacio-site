@@ -19,3 +19,6 @@ Thumbs.db
 # Configurações do editor
 .vscode/
 .idea/
+
+# Banco de Dados
+.sql
