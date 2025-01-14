@@ -384,3 +384,23 @@ header > .header-img > img{
     text-align: center;
 }
 
+.no-results-alert-content{
+    
+    margin-top: 75px;
+    padding: 25px;
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+    height: 100%;
+}
+
+.no-results-alert-content > h1{
+    font-size: 2.25rem;
+    margin-bottom: 10px;
+}
+
+.no-results-alert-content > p{
+    font-size: 1.5rem;
+
+}
+

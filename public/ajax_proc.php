@@ -4,6 +4,7 @@
     
     $pesquisa = isset($_GET['pesquisa']) ? $_GET['pesquisa'] : die("Falha no Envio do Ajax");
     
+    //echo $_GET['pesquisa'];
 
     
     $sql = "SELECT id_anais, instituicao, evento, tema, descricao, isbn, ano, create_at, file_path 
@@ -11,7 +12,8 @@
     WHERE tema LIKE ? 
     OR evento LIKE ?
     OR instituicao LIKE ?
-    OR isbn LIKE ? ;";
+    OR isbn LIKE ? 
+    OR ano LIKE ? ;";
 
     $stmt = $conn->prepare($sql);
     /*
@@ -21,13 +23,15 @@
     $stmt->bindParam(':isbn', $pesquisa);
     */
     
-    if(!$stmt->execute(["%$pesquisa%", "%$pesquisa%", "%$pesquisa%", "%$pesquisa%"])){
+    if(!$stmt->execute(["%$pesquisa%", "%$pesquisa%", "%$pesquisa%", "%$pesquisa%", "%$pesquisa%"])){
         die("Erro na pesquisa do ajax!");
     }
      
     if($stmt->rowCount() > 0) {
         $values = $stmt->fetchAll();
         echo json_encode($values);
+    } else{
+        echo json_encode(["noresult" => ""]);
     }
 
 ?>

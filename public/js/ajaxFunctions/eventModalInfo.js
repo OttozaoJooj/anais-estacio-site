@@ -37,7 +37,7 @@ function prepareModalInfo(ajaxAnaisData){
             btnLinkViewerPDF.href = '../src/adm/uploads/anais' + anaisDataClicked.filePath.slice(56)
             btnLinkDownload.href = '../src/adm/uploads/anais' + anaisDataClicked.filePath.slice(56)
             
-            console.log(anaisDataClicked.filePath.slice(56))
+            //console.log(anaisDataClicked.filePath.slice(56))
 
             modalInfoContainer.classList.add("open-modal")
         })

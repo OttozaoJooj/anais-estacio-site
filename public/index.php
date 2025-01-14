@@ -10,7 +10,7 @@
 
     </head>
     <body>
-
+<!-- Prompt do ChatGPT: boas práticas para segurança web em php-->
         <div class="modal-info-anais">
             <div class="modal-info-anais-content">
                 <div class="btn-close-modal-info">
@@ -85,10 +85,14 @@
                                 <span class="instituicao">Instituto Federal de Ciência e Tecnologia do Pará - Campus Castanhal</span>
                                 <span class="ano">2024</span>
                         </div>
+
                             
--->
-                            
+                        <div class="no-results-alert-content">
+                            <h1>Sem Resultados.</h1>
+                            <p>Essas informações não estão no nosso banco de dados.</p>
                         </div>
+--> 
+                    </div>
                         
                         
                     </div>
@@ -108,10 +112,12 @@
         -->
         
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <script src="js/constructorAjaxAnaisData.js"></script>
-        <script src="js/renderAjaxAnais.js"></script>
-        <script src="js/eventModalInfo.js"></script>
-        <script src="js/modalInfoAnais.js"></script>
+        <script src="js/ajaxFunctions/generalFunctions.js"></script>
+        <script src="js/ajaxFunctions/constructorAjaxAnaisData.js"></script>
+        <script src="js/ajaxFunctions/renderAjaxAnais.js"></script>
+        <script src="js/ajaxFunctions/eventModalInfo.js"></script>
+        <script src="js/ajaxFunctions/renderNoResultsAlert.js"></script>
+        <!--<script src="js/ajaxFunctions/modalInfoAnais.js"></script>-->
         <script src="js/ajax.js"></script>
 
         
