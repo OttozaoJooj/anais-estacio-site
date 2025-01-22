@@ -22,3 +22,6 @@ Thumbs.db
 
 # Banco de Dados
 *.sql
+
+# Arquivo de Configuração do Apache2
+.htaccess
