@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <title>Editais Estácio</title>
-        <link href="../static/styles/index.css" rel="stylesheet" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Istok+Web&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,400;0,700;0,900;1,500&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Anais Estácio</title>
 
-    </head>
+    <link rel="stylesheet" href="../static/styles/templates_css/header.css">
+    <link rel="stylesheet" href="../static/styles/index.css" />
+    <link rel="stylesheet" href="../static/styles/templates_css/reset.css">
+
+    <!--Google Fonts API -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,400;0,700;0,900;1,500&display=swap" rel="stylesheet">
+
+
+</head>
     <body>
 <!-- Prompt do ChatGPT: boas práticas para segurança web em php-->
         <div class="modal-info-anais">
@@ -47,14 +54,16 @@
                 </div>
             </div>
         </div>
+        
         <header>
             <div class="header-img">
                 <img src="../assets/img/logoEstacio.png">
             </div>
             <div class="btn-sobre">
-                <button>Sobre</button>
+                <a href="../src/about/about.php">Sobre</a>
             </div>
         </header>
+
 
         <div class="container">
             <div class="title">

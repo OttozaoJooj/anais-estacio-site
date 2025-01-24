@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar</title>
-    <link rel="stylesheet" href="../../static/styles/login.css">
+    <title>Entrar | Anais Estácio</title>
 
+    <link rel="stylesheet" href="../../static/styles/templates_css/header.css">
+    <link rel="stylesheet" href="../../static/styles/login.css">
+    <link rel="stylesheet" href="../../static/styles/templates_css/reset.css">
+
+    <!--Google Fonts API -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
+    
     <header>
         <div class="header-img">
             <img src="../../assets/img/logoEstacio.png">
         </div>
         <div class="btn-sobre">
-            <button>Sobre</button>
+            <a href="../about/about.php">Sobre</a>
         </div>
     </header>
+
 
     <div class="container">
         <div class="content">

@@ -9,12 +9,6 @@
 
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 p, h1, h2, h3, h4, h5, h6, span, input, button, a, th, td, label, textarea{
     color: var(--light-black);
     font-family: 'Montserrat', serif;
