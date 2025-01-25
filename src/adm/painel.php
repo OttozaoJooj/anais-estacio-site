@@ -1,19 +1,48 @@
 <?php
 require_once '../../conexao.php';
+
 session_start();
+
+function getAnaisInfo($connection){
+    $sql = "SELECT * FROM anais;";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute();
+    if($stmt->rowCount() <= 0){
+        die("Nada Retornado!");
+    } else{
+        return $stmt->fetchAll();
+    }
+
+}
+
+function getUserNameLogged($connection){
+    $docenteID = $_SESSION["id_docente"];
+    $stmt = $connection->prepare("SELECT nome FROM docentes WHERE id_docente = ?;");
+    $stmt->bindParam(1, $docenteID);
+
+    if(!$stmt->execute()){
+        die("Erro na execução da Query!");
+    }
+
+    if($stmt->rowCount() > 0){
+        return $stmt->fetchAll();
+    }else{
+        die("nome de usuário inexistente!");
+    }
+}
+
+
 if (!isset($_SESSION['id_docente'])) {
     header("Location: ../login/login.php");
     exit();
 }
 
-    $sql = "SELECT * FROM anais;";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    if($stmt->rowCount() <= 0){
-        die("Nada Retornado!");
-    } else{
-        $rows = $stmt->fetchAll();
-    }
+$rows = getAnaisInfo($conn);
+$userNameLogged = getUserNameLogged($conn)[0][0];
+
+    
+
+
 /*
     echo '<pre>';
     print_r($_SESSION);
@@ -43,6 +72,8 @@ if (!isset($_SESSION['id_docente'])) {
 <body>
     <header class="header">
         <h1>Painel</h1>
+        <h2>Usuário: <?php echo ucwords($userNameLogged);?></h2>
+        
     </header>
     <div class="container">
         <div class="btn-upload-anais">
