@@ -72,11 +72,15 @@ $userNameLogged = getUserNameLogged($conn)[0][0];
 <body>
     <header class="header">
         <h1>Painel</h1>
-        <h2>Usuário: <?php echo ucwords($userNameLogged);?></h2>
+        <h2>Usuário: <?= ucwords($userNameLogged);?></h2>
         
     </header>
     <div class="container">
-        <div class="btn-upload-anais">
+        <div class="filter-upload">
+            <select name="filter" id="" class="filter">
+                <option value="1">Meus Anais</option>
+                <option value="2">Todos os Anais</option>
+            </select>
             <button class="btn-upload btn">Enviar Anais</button>
         </div>               
         <div class="content">
@@ -238,5 +242,6 @@ $userNameLogged = getUserNameLogged($conn)[0][0];
     <script src="js/anaisData.js"></script>
     <script src="js/updateDataAnais.js"></script>
     <script src="js/deleteDataAnais.js"></script>
+    <script src="js/filter.js"></script>
 </body>
 </html>

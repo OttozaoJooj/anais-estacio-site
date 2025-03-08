@@ -175,4 +175,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['tipo-form'] === 'delete'){
 
 }
 
+
+// Ajax
+if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["tipo-form"] == 'ajax'){
+    echo json_encode("isso  é uma solicitação ajax");
+}
+
 ?>
