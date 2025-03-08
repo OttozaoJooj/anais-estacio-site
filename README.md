@@ -35,8 +35,8 @@
 - Criar o front-end do login/signin (2) [x]
 - Criar o front-end da Home Page (1) [x]
 - Criar o modal de informações do anais na Home Page (2) [x]
-- Criar o front-end do painel (1) []
-    - Criar modal do upload de anais (2) []
+- Criar o front-end do painel (1) [x]
+    - Criar modal do upload de anais (2) [x]
 - União do Front-end com Back-end (1) [x]
 - Versão Mobile(1) []
 
@@ -45,7 +45,18 @@
 - PDF Viewer (3) [x]
 
 ## Details
-- Consistência dos dados de Update e Delete (3) []
+- Consistência dos dados de Update e Delete (3) [x]
+
+## Segurança
+- Segurança nos Inputs (1) []
+- Segurança no envio de formulários (1) []
+    - ***Prompt ChatGPT: como ter segurança no envio de formulários usando PHP, cite fontes***
+
+## Testes
+- Tratamento de Exceções eficientes (1) []
+- Testes Unitários (2) []
+- Testes usando Cypress (2) []
+- Testes de Integração (3) []
 
 ---
 
@@ -56,4 +67,11 @@
 
 ---
 
+---
 
+# Todo - Otto Mozale
+- ~Criar página "Sobre"~ 
+- ~Mostrar Nome do Usuário Logado no painel~
+- **Adicionar filtros de consulta ao banco de dados**
+- Responsividade no index
+- Animação do InputText do Index

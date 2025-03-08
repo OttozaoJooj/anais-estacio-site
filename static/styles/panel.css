@@ -4,18 +4,13 @@
     --light-black: #222222;
     --light-blue-secondary: #f2f6ff;
     --light-green-primary:  #42c029;
-    --light-red-primary: #c81414;
+    --light-green-secondary: #205e13;
+    --light-red-primary: hsl(0, 82%, 43%);
     --light-violet-primary: #c814c8;
 
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-p, h1, h2, h3, h4, h5, h6, span, input, button, a, th, td, label, textarea{
+p, h1, h2, h3, h4, h5, h6, span, input, button, a, th, td, label, textarea, select, option{
     color: var(--light-black);
     font-family: 'Montserrat', serif;
 
@@ -80,20 +75,49 @@ body{
     transition: 0.10s ease-in-out;
 }
 
-.btn-upload-anais{
+.filter{
+    font-weight: 700;
+    color: white;
+    font-size: 1.25rem;
+    border-radius: 10px;    
+    padding: 10px 15px;
+    background-color: var(--light-green-secondary);
+    border: 2px solid var(--light-green-secondary);
+    margin-right: 20px;
+    transition: 0.10s ease-in-out;
+    
+
+}
+
+.filter:hover{
+    background-color: white;
+    color: var(--light-green-secondary);
+    transition: 0.10s ease-in-out;
+    
+}
+
+.filter > option{
+    color: white !important;
+    font-weight: 500;
+    background-color: var(--light-green-secondary) !important;
+}
+
+
+
+.filter-upload{
     text-align: end;
     margin-bottom: 20px;
 
 }
 
-.btn-upload-anais > button{
+.filter-upload > button{
     background-color: var(--light-green-primary);
     border: 2px solid var(--light-green-primary);
     padding: 10px 20px;
     font-size: 1.25rem;
 }
 
-.btn-upload-anais > button:hover{
+.filter-upload > button:hover{
     color: var(--light-green-primary);
     background-color:white;
 

@@ -1,19 +1,48 @@
 <?php
 require_once '../../conexao.php';
+
 session_start();
+
+function getAnaisInfo($connection){
+    $sql = "SELECT * FROM anais;";
+    $stmt = $connection->prepare($sql);
+    $stmt->execute();
+    if($stmt->rowCount() <= 0){
+        die("Nada Retornado!");
+    } else{
+        return $stmt->fetchAll();
+    }
+
+}
+
+function getUserNameLogged($connection){
+    $docenteID = $_SESSION["id_docente"];
+    $stmt = $connection->prepare("SELECT nome FROM docentes WHERE id_docente = ?;");
+    $stmt->bindParam(1, $docenteID);
+
+    if(!$stmt->execute()){
+        die("Erro na execução da Query!");
+    }
+
+    if($stmt->rowCount() > 0){
+        return $stmt->fetchAll();
+    }else{
+        die("nome de usuário inexistente!");
+    }
+}
+
+
 if (!isset($_SESSION['id_docente'])) {
     header("Location: ../login/login.php");
     exit();
 }
 
-    $sql = "SELECT * FROM anais;";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    if($stmt->rowCount() <= 0){
-        die("Nada Retornado!");
-    } else{
-        $rows = $stmt->fetchAll();
-    }
+$rows = getAnaisInfo($conn);
+$userNameLogged = getUserNameLogged($conn)[0][0];
+
+    
+
+
 /*
     echo '<pre>';
     print_r($_SESSION);
@@ -29,19 +58,29 @@ if (!isset($_SESSION['id_docente'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Painel | Anais Estácio</title>
+
+    <link rel="stylesheet" href="../../static/styles/panel.css">
+    <link rel="stylesheet" href="../../static/styles/templates_css/reset.css">
+
+    <!--Google Fonts API -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Istok+Web&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,400;0,700;0,900;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../static/styles/panel.css">
     
 </head>
 <body>
     <header class="header">
         <h1>Painel</h1>
+        <h2>Usuário: <?= ucwords($userNameLogged);?></h2>
+        
     </header>
     <div class="container">
-        <div class="btn-upload-anais">
+        <div class="filter-upload">
+            <select name="filter" id="" class="filter">
+                <option value="1">Meus Anais</option>
+                <option value="2">Todos os Anais</option>
+            </select>
             <button class="btn-upload btn">Enviar Anais</button>
         </div>               
         <div class="content">
@@ -203,5 +242,6 @@ if (!isset($_SESSION['id_docente'])) {
     <script src="js/anaisData.js"></script>
     <script src="js/updateDataAnais.js"></script>
     <script src="js/deleteDataAnais.js"></script>
+    <script src="js/filter.js"></script>
 </body>
 </html>

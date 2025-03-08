@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/11/2024 às 03:54
+-- Tempo de geração: 23/01/2025 às 00:02
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -45,7 +45,11 @@ CREATE TABLE `anais` (
 --
 
 INSERT INTO `anais` (`id_anais`, `instituicao`, `evento`, `tema`, `descricao`, `isbn`, `fk_id_docente`, `create_at`, `ano`, `file_path`) VALUES
-(1, 'ifpa', '30 reaus', 'tecnologia', 'este evento teve como propósito a apresentação de trabalho da área de Tecnologia da Informação...', '954654654', NULL, '2024-11-22 02:23:53', '2024', 'C:\\xampp\\htdocs\\anais-estacio-site\\src\\adm/uploads/anais/O Lado Bom da Vida - Matthew Quick.pdf');
+(11, 'salada', 'salada3', 'legal', 'kkkkkkkkkkkkkkkkkkkkkkkkkkkk atualizado usuário 2', '12345', 2, '2024-11-26 20:51:27', '2023', 'C:\\xampp\\htdocs\\anais-estacio-site\\src\\adm/uploads/anais/SLIDE_GERAL_-_BANCO_DE_DADOS.pdf'),
+(13, 'instituicao test 2', 'evento test 2', 'tema test 2', 'descricao 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu turpis volutpat, euismod ex mollis, elementum tellus. Pellentesque sed porttitor ante. Pellentesque sit amet sapien porta, luctus augue in, interdum mauris. Morbi tincidunt, tortor et interdum tempor, tortor sem venenatis nisl, ut suscipit dui augue blandit leo. Pellentesque id lacus purus. Ut in aliquam felis. Integer a magna id purus mattis egestas. Donec quis egestas purus. Praesent eu arcu facilisis, sceleris', '4321', 2, '2024-11-28 20:18:57', '2022', 'C:\\xampp\\htdocs\\anais-estacio-site\\src\\adm/uploads/anais/Play Framework - Java para web sem servlets e com diversao.pdf'),
+(17, 'instituicao test 1', 'evento test 1', 'tema test 1', 'descricao test 1', '5555666', 1, '2024-12-05 20:59:28', '2020', 'C:\\xampp\\htdocs\\anais-estacio-site\\src\\adm/uploads/anais/Livro de MySQL.pdf'),
+(18, 'Faculdade Estácio de Sá de Vitória | Faculdade Estácio de Sá de Vila Velha ', 'IX SEMINÁRIO DE PESQUISA, EXTENSÃO E  INTERNACIONALIZAÇÃO', 'ESG - Ações para um novo mundo e uma nova  educação ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pellentesque ultrices elit, at faucibus lacus maximus sed. Nulla facilisi. Donec scelerisque augue eu rutrum placerat. Donec at lobortis arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vel facilisis risus. Etiam id quam aliquet, aliquam nulla quis, suscipit velit. Curabitur a mollis lectus, in efficitur justo. Sed eu ullamcorper massa, ac finibus nunc.', ' 2764-1775', 1, '2025-01-02 23:28:52', '2024', 'C:\\xampp\\htdocs\\anais-estacio-site\\src\\adm/uploads/anais/Anais+IX+Seminário+2024.1+-+v.1+Ciências+Jurídicas.pdf'),
+(19, 'Faculdade Estácio de Sá de Vitória / Faculdade Estácio de Sá de Vila Velha ', 'IX SEMINÁRIO DE PESQUISA, EXTENSÃO E  INTERNACIONALIZAÇÃO', 'A inteligência artificial e o desenvolvimento sustentável na educação', 'ellentesque vitae augue quis sem pulvinar facilisis faucibus vel tortor. Aliquam rhoncus libero a varius blandit. Nam fermentum eleifend velit eu varius. Curabitur nunc sapien, venenatis dignissim semper vitae, ultricies non mi. Curabitur dignissim, urna in accumsan imperdiet, orci purus varius est, a ultrices odio leo vitae purus. Sed a felis et risus lacinia facilisis nec aliquam tortor. Aliquam maximus varius sollicitudin. Praesent at erat ullamcorper urna sollicitudin pulvinar. Curabitur pla', ' 2764-1775', 1, '2025-01-02 23:40:14', '2023', 'C:\\xampp\\htdocs\\anais-estacio-site\\src\\adm/uploads/anais/Anais+Sepesqi+2023.2+-+v.1+Ciências+Jurídicas+p.+1-58.pdf');
 
 -- --------------------------------------------------------
 
@@ -84,7 +88,8 @@ CREATE TABLE `docentes` (
 --
 
 INSERT INTO `docentes` (`id_docente`, `nome`, `senha`, `cod_docente`, `fk_id_curso`) VALUES
-(1, 'otto', '12345', '12345', 1);
+(1, 'otto', '12345', '12345', 1),
+(2, 'leo', '6789', '6789', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -118,7 +123,7 @@ ALTER TABLE `docentes`
 -- AUTO_INCREMENT de tabela `anais`
 --
 ALTER TABLE `anais`
-  MODIFY `id_anais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_anais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `cursos`
@@ -130,7 +135,7 @@ ALTER TABLE `cursos`
 -- AUTO_INCREMENT de tabela `docentes`
 --
 ALTER TABLE `docentes`
-  MODIFY `id_docente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_docente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para tabelas despejadas

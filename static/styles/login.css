@@ -1,48 +1,8 @@
-/* Reset básico */
+
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
 }
 
-header{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background-color: white;
-    padding: 20px 25px;
-    box-shadow: 0px 4px 0px black;
-    border-radius: 0px 0px 10px 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-header > .btn-sobre > button{
-    height: 100%;
-    width: 100px;
-    background-color: #144BC8;
-    border: 2px solid #144BC8;
-    font-weight: 600;
-    color: white;
-    font-size: 1.05rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.10s ease-in-out;
-
-}
-
-header > .btn-sobre > button:hover{
-    background-color: white;
-    border: 2px solid #144BC8;
-    color: #144BC8;
-    transition: 0.10s ease-in-out;
-
-}
-
-header > .header-img > img{
-    width: 125px;
-}
 
 
 body{
@@ -147,41 +107,5 @@ body{
 
 .logo-estacio{
     text-align: center;
-}
-
-footer{
-    position: absolute;
-    width: 100%;
-    background-color: aliceblue;
-    text-align: center;
-    bottom: 0;
-    padding: 20px;
-    
-}
-
-footer > .links{
-    display: flex;
-    justify-content: center;
-    column-gap: 25px;
-    color: #1553e4;
-    font-size: 1.10rem;
-    font-weight: 600;
-    
-}
-
-footer > .links > a{
-    text-decoration: none;
-}
-
-footer > .links > a:hover{
-    text-decoration: underline;
-
-}
-
-footer p{
-    color: blue;
-}
-footer p:first-child{
-    margin-bottom: 5px;
 }
 

@@ -19,3 +19,9 @@ Thumbs.db
 # Configurações do editor
 .vscode/
 .idea/
+
+# Banco de Dados
+*.sql
+
+# Arquivo de Configuração do Apache2
+.htaccess
