@@ -1,7 +1,7 @@
 # Anais Estácio
 <p>Este projeto tem como intuito a criação de um repositório de arquivos PDF's de anais referentes a eventos do curso de Análise e Desenvolvimento de Sistemas.</p>
 
-![Esboço do Site](/assets/scheme/front-end_anais_estacio.jpeg)
+![Esboço do Site](/scheme/front-end_anais_estacio.jpeg)
 
 ## Tecnologias
 
