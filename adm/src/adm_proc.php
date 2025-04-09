@@ -1,8 +1,13 @@
 <?php
+
+ini_set('display_errors',1);
+ini_set('display_startup_erros',1);
+error_reporting(E_ALL);
 session_start();
 require '../../conexao.php';
+require '../../functions.php';
 // Configuração do diretório de upload
-$diretorioUpload = __DIR__."/uploads/anais/";
+$diretorioUpload = '../../uploads/';
 
 
 /*echo "<pre>";
@@ -11,6 +16,8 @@ print_r($_POST);
 print_r($_FILES);
 echo "</pre>";
 */
+
+//dd($_FILES);
 
 // Create Anais
 
@@ -57,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['arquivo']) && $_POST
 
         if ($stmt->execute()) {
             echo "Anais cadastrado com sucesso!";
-            header("Location: painel.php");
+            header("Location: ../adm.php");
         } else {
             echo "Erro ao salvar no banco de dados.";
         }
@@ -107,7 +114,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['tipo-form'] === 'update'){
             $stmtUpdate->bindParam(7, $idAnais);
         
             if($stmtUpdate->execute()){
-                header("location: painel.php");
+                header("location: ../adm.php");
             } else{
                 die("Erro na consulta: update");
             }
@@ -115,7 +122,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['tipo-form'] === 'update'){
 
         } else{
             echo '<script> alert("Permissão Negada: Não é possível alterar anais de outro usuário! "); </script>';            
-            echo '<script> window.location.href = "painel.php"</script>';
+            echo '<script> window.location.href = "../adm.php"</script>';
         };
     }else{
         die("Erro na consulta: validação de permissão");
@@ -154,7 +161,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['tipo-form'] === 'delete'){
             if($stmtDelete->execute()){
                 echo "Cláusula Delete Executada";
                 unlink("uploads/anais/$filePathToDelete");
-                header("location: painel.php");
+                header("location: ../adm.php");
 
             } else{
                 echo "Erro na Execução da Cláusula Delete";
@@ -164,7 +171,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['tipo-form'] === 'delete'){
 
         } else{
             echo '<script> alert("Permissão Negada: Não é possível apagar anais de outro usuário! "); </script>';            
-            echo '<script> window.location.href = "painel.php"</script>';
+            echo '<script> window.location.href = "../adm.php"</script>';
         };
     }else{
         die("Erro na consulta: validação de permissão");

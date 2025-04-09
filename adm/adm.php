@@ -1,5 +1,5 @@
 <?php
-require_once '../../conexao.php';
+require_once '../conexao.php';
 
 session_start();
 
@@ -33,7 +33,7 @@ function getUserNameLogged($connection){
 
 
 if (!isset($_SESSION['id_docente'])) {
-    header("Location: ../login/login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -60,8 +60,8 @@ $userNameLogged = getUserNameLogged($conn)[0][0];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Painel | Anais Estácio</title>
 
-    <link rel="stylesheet" href="../../static/styles/panel.css">
-    <link rel="stylesheet" href="../../static/styles/templates_css/reset.css">
+    <link rel="stylesheet" href="../assets/styles/panel.css">
+    <link rel="stylesheet" href="../assets/styles/templates_css/reset.css">
 
     <!--Google Fonts API -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -111,7 +111,7 @@ $userNameLogged = getUserNameLogged($conn)[0][0];
                         <td class="isbn"><?= $row["isbn"]?></td>
                         <td class="ano"><?= $row["ano"]?></td>
                         <td class="nome-arquivo"><?= basename($row["file_path"])?></td>
-                        <td class="acoes"><button class="btn-update btn">Atualizar</button> <button class="btn-delete btn">Excluir</button> <a class="btn-viewer btn" href="<?= "uploads/anais/".basename($row["file_path"])?>" target="_blank">Ver</a></td>
+                        <td class="acoes"><button class="btn-update btn">Atualizar</button> <button class="btn-delete btn">Excluir</button> <a class="btn-viewer btn" href="<?= "../uploads/".basename($row["file_path"])?>" target="_blank">Ver</a></td>
                     </tr>
                     <?php endforeach;?>
                 </tbody>
@@ -129,10 +129,10 @@ $userNameLogged = getUserNameLogged($conn)[0][0];
     <dialog class="dialog-upload-anais">
         <div class="dialog-upload-anais-content">
             <div class="close-upload">
-                <img src="../../assets/icons/close-modal-icon.png">
+                <img src="../assets/icons/close-modal-icon.png">
             </div>
 
-            <form action="painel_proc.php" method="POST" enctype="multipart/form-data">
+            <form action="src/adm_proc.php" method="POST" enctype="multipart/form-data">
                 <h3>ENVIAR ANAIS</h3>
                 <label for="instituicao">Instituição:</label>
                 <input type="text" name="instituicao" required>
@@ -180,10 +180,10 @@ $userNameLogged = getUserNameLogged($conn)[0][0];
     <dialog class="update-anais">
         <div class="update-anais-content">
             <div class="close-update">
-                <img src="../../assets/icons/close-modal-icon.png">
+                <img src="../assets/icons/close-modal-icon.png">
             </div>
         
-            <form action="painel_proc.php" method="post" class="form-update">
+            <form action="src/adm_proc.php" method="post" class="form-update">
                 <h3>ATUALIZAR</h3>
                 <label for="instituicao">Instituição:</label>
                 <input type="text" name="instituicao" class="ipt-instituicao" required>
@@ -223,7 +223,7 @@ $userNameLogged = getUserNameLogged($conn)[0][0];
     <!-- Delete Anais-->
 
     <dialog class="dialog-delete-anais">
-        <form action="painel_proc.php" method="post">
+        <form action="src/adm_proc.php" method="post">
             <h2>Tem certeza que deseja excluir o anais?</h2>
 
             <input type="hidden" name="tipo-form" value="delete">    
@@ -238,10 +238,11 @@ $userNameLogged = getUserNameLogged($conn)[0][0];
 
         </form>    
     </dialog>
-    <script src="js/modalFunctios.js"></script>
+    <!--<script src="js/modalFunctios.js"></script>
     <script src="js/anaisData.js"></script>
     <script src="js/updateDataAnais.js"></script>
     <script src="js/deleteDataAnais.js"></script>
-    <script src="js/filter.js"></script>
+    <script src="js/filter.js"></script>-->
+    <script src="../assets/js/adm.js"></script>
 </body>
 </html>

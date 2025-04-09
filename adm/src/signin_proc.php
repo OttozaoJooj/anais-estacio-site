@@ -1,7 +1,7 @@
 <?php
 require '../../conexao.php';
 
-print_r($_POST);
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $nome = $_POST["nome"];
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if($stmt->execute()){
         
-        header("location: ../login/login.php");
+        header("location: ../login.php");
 
     } else{
         echo "falha no cadastro";

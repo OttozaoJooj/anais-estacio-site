@@ -3,48 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrar | Anais Estácio</title>
+    <title>Cadastre-se | Anais Estácio</title>
 
-    <link rel="stylesheet" href="../../static/styles/templates_css/header.css">
-    <link rel="stylesheet" href="../../static/styles/login.css">
-    <link rel="stylesheet" href="../../static/styles/templates_css/reset.css">
+    <link rel="stylesheet" href="../assets/styles/templates_css/header.css">
+    <link rel="stylesheet" href="../assets/styles/signin.css">
+    <link rel="stylesheet" href="../assets/styles/templates_css/reset.css">
 
+    
     <!--Google Fonts API -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-
 </head>
 <body>
     
     <header>
         <div class="header-img">
-            <img src="../../assets/img/logoEstacio.png">
+            <img src="../assets/img/logoEstacio.png">
         </div>
         <div class="btn-sobre">
-            <a href="../about/about.php">Sobre</a>
+            <a href="../about.php">Sobre</a>
         </div>
     </header>
+
 
 
     <div class="container">
         <div class="content">
             <div class="title">
-                <h1>ENTRAR</h1>
+                <h1>CADASTRE-SE</h1>
             </div>
-            <form class="form" action="login_proc.php" method="GET">
+            <form class="form" action="src/signin_proc.php" method="POST">
                 <div class="form-content">
-                    <label for="cod_docente">Código Docente:</label>
-                    <input type="text" id="cod_docente" name="cod_docente" required>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome" required>
+                    <label for="text">Código Docente:</label>
+                    <input type="text" name="cod_docente" required>
                     <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required>
-                    <input type="submit" value="Entrar">
+                    <input type="password" name="senha" id="senha" required>
+                    <label for="curso">Curso:</label>
+                    <select name="curso" id="curso" required>
+                        <option value="1" selected>Análise e Desenvolvimento de Sistemas</option>
+                    </select>
+                    <input type="submit" value="Cadastrar">
                 </div>
-                <div class="link-signin">
-                    <a href="../signin/signin.php">Cadastre-se</a>
+                <div class="link-login">
+                    <a href="login.php">Entrar</a>
                 </div>
                 <div class="logo-estacio">
-                    <img src="../../assets/img/logoEstacio2.png" width="96px" height="27px">
+                    <img src="../assets/img/logoEstacio2.png" width="96px" height="27px">
                 </div>
             </form>
         </div>

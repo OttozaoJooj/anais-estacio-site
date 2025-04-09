@@ -1,12 +1,8 @@
 <?php 
-    require '../conexao.php';
-
+    require 'conexao.php';
     
     $pesquisa = isset($_GET['pesquisa']) ? $_GET['pesquisa'] : die("Falha no Envio do Ajax");
-    
-    //echo $_GET['pesquisa'];
-
-    
+       
     $sql = "SELECT id_anais, instituicao, evento, tema, descricao, isbn, ano, create_at, file_path 
     FROM anais
     WHERE tema LIKE ? 

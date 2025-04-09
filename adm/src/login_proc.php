@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     if ($stmt->rowCount() > 0) {
         $_SESSION['id_docente'] = $stmt->fetchAll()[0]["id_docente"];
-        header("Location: ../adm/painel.php");
+        header("Location: ../adm.php");
     } else {
         echo "Usuário ou senha incorretos.";
     }
