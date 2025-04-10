@@ -73,6 +73,6 @@
 - ~Criar página "Sobre"~ 
 - ~Mostrar Nome do Usuário Logado no painel~
 - ~Mudar a arquitetura de arquivos~
-- **Adicionar filtros de consulta ao banco de dados**
-- Responsividade no index
+- ~Adicionar filtros de consulta ao banco de dados~
+- **Responsividade no index**
 - Animação do InputText do Index
