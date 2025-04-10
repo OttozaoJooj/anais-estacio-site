@@ -3,6 +3,24 @@ require_once '../conexao.php';
 
 session_start();
 
+if (!isset($_SESSION['id_docente'])) {
+    header("Location: login.php");
+    exit();
+}
+
+
+
+
+function setIDDocenteInSessionStorage(){
+    /*Session Storage dura até a aba fechar*/
+    /*Local Storage dura para sempre*/
+    $docenteID = $_SESSION["id_docente"];
+
+    echo "<script>
+        sessionStorage.setItem('id_docente', $docenteID);
+    </script>";
+}
+
 function getAnaisInfo($connection){
     $sql = "SELECT * FROM anais;";
     $stmt = $connection->prepare($sql);
@@ -17,6 +35,7 @@ function getAnaisInfo($connection){
 
 function getUserNameLogged($connection){
     $docenteID = $_SESSION["id_docente"];
+
     $stmt = $connection->prepare("SELECT nome FROM docentes WHERE id_docente = ?;");
     $stmt->bindParam(1, $docenteID);
 
@@ -31,11 +50,7 @@ function getUserNameLogged($connection){
     }
 }
 
-
-if (!isset($_SESSION['id_docente'])) {
-    header("Location: login.php");
-    exit();
-}
+setIDDocenteInSessionStorage();
 
 $rows = getAnaisInfo($conn);
 $userNameLogged = getUserNameLogged($conn)[0][0];
@@ -77,9 +92,10 @@ $userNameLogged = getUserNameLogged($conn)[0][0];
     </header>
     <div class="container">
         <div class="filter-upload">
-            <select name="filter" id="" class="filter">
-                <option value="1">Meus Anais</option>
+            <select name="filter" class="filter">
                 <option value="2">Todos os Anais</option>
+                <option value="1">Meus Anais</option>
+                
             </select>
             <button class="btn-upload btn">Enviar Anais</button>
         </div>               

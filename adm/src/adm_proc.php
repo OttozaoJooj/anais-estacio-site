@@ -184,8 +184,51 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['tipo-form'] === 'delete'){
 
 
 // Ajax
-if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["tipo-form"] == 'ajax'){
-    echo json_encode("isso  é uma solicitação ajax");
+if($_SERVER["REQUEST_METHOD"] == 'POST' && $_POST["tipo-form"] == 'filter'){
+    
+    //echo json_encode($_POST);
+     
+    $typeOfFilter = $_POST['tipo-filter'];
+    $idDocente = $_POST['id_docente'];
+    
+    switch ($typeOfFilter){
+        case '1':
+            $sql = 'SELECT * FROM anais WHERE fk_id_docente = ?;';
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(1, $idDocente);
+
+            if($stmt->execute()){
+                if($stmt->rowCount() > 0){
+                    echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+                }
+                else{
+                    echo json_encode('Nada Retornado');
+                }
+            } else{
+                die("Erro ao Executar o SQL");
+            }
+
+            break;
+
+        case '2':
+            $sql = 'SELECT * FROM anais;';
+            $stmt = $conn->prepare($sql);
+                  
+            if($stmt->execute()){
+                if($stmt->rowCount() > 0){
+                    echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+                }
+                else{
+                    echo json_encode('Nada Retornado');
+                }
+            } else{
+                die("Erro ao Executar o SQL");
+            }
+
+            break;
+
+    } 
+    
 }
 
 ?>

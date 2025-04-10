@@ -15,7 +15,7 @@ let iptIsbn = document.querySelector(".ipt-isbn")
 let iptAno = document.querySelector(".ipt-ano")
 let iptIDUpdate = document.querySelector(".ipt-id-update")
 
-let filterElement = document.querySelector('.filter')
+
 
 
 
@@ -83,21 +83,62 @@ btnUpdate.forEach(btn => {
 
 // Filters 
 
+function getBasename(path){
+    return path.slice(path.lastIndexOf('/') + 1);
+}
+
+function renderAnaisDataFilted(anaisData){
+    const anaisContainer = document.querySelector('.anais-container');
+
+    while(anaisContainer.firstChild){
+        anaisContainer.removeChild(anaisContainer.firstChild)
+    }
+
+    
+
+    anaisData.forEach(anais => {
+        console.log(anais['id_anais'])
+        
+        
+        anaisContainer.innerHTML +=  `
+            <tr class="anais">
+                <th scope="row" class="id">${anais['id_anais']}</th>
+                <td class="instituicao">${anais['instituicao']}</td>
+                <td class="evento">${anais['evento']}</td>
+                <td class="tema">${anais['tema']}</td>
+                <td class="descricao">${anais['descricao']}</td>
+                <td class="isbn">${anais['isbn']}</td>
+                <td class="ano">${anais['ano']}</td>
+                <td class="nome-arquivo">${getBasename(anais['file_path'])}</td>
+                <td class="acoes"><button class="btn-update btn">Atualizar</button> <button class="btn-delete btn">Excluir</button> <a class="btn-viewer btn" href="${'../uploads/' + getBasename(anais['file_path'])}" target="_blank">Ver</a></td>
+            </tr>
+        `     
+    });  
+
+
+}
+
+let filterElement = document.querySelector('.filter')
 
 function sendAjax(value){
-    //jsonBody["tipo-filter"] = value
+    
+    let docenteId = sessionStorage.getItem('id_docente');
 
-    fetch("painel_proc.php", {
+
+    fetch("src/adm_proc.php", {
         method: "POST",
-        body: "tipo-form=ajax&tipo-filter=" + value,
+        body: "tipo-form=filter&tipo-filter=" + value + "&id_docente=" + docenteId,
         headers: {"Content-Type": "application/x-www-form-urlencoded"}
-    }).then(response => response.json()).then(data => console.log(data))
+    })
+    .then(response => response.json())
+    .then(data => renderAnaisDataFilted(data));
     
 
 }
 
 filterElement.addEventListener("change", (e) =>{
-    sendAjax(e.target.value);
+    let typeOfFilter = e.target.value;
+    sendAjax(typeOfFilter);
 } )
 
 
