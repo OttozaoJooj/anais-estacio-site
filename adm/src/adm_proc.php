@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['arquivo']) && $_POST
 
 
     $arquivo = $_FILES['arquivo'];
-    $nomeArquivo = basename($arquivo['name']);
+    $nomeArquivo = $arquivo['name'];
     $caminhoCompleto = $diretorioUpload . $nomeArquivo;
 
     // Validações básicas
@@ -46,7 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['arquivo']) && $_POST
     // Move o arquivo para o diretório de uploads
     echo $arquivo["tmp_name"]; 
     echo "<br>";
+    echo $arquivo['name'];
+    echo "<br>";
     echo $caminhoCompleto;
+
     try{
     if (move_uploaded_file($arquivo['tmp_name'], $caminhoCompleto)) {
         
@@ -60,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['arquivo']) && $_POST
         $stmt->bindParam(5, $isbn);
         $stmt->bindParam(6, $fkIdDocente);
         $stmt->bindParam(7, $ano);       
-        $stmt->bindParam(8, $caminhoCompleto);
+        $stmt->bindParam(8, $nomeArquivo);
 
         if ($stmt->execute()) {
             echo "Anais cadastrado com sucesso!";

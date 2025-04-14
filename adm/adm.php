@@ -126,7 +126,7 @@ $userNameLogged = getUserNameLogged($conn)[0][0];
                         <td class="descricao"><?= $row["descricao"]?></td>
                         <td class="isbn"><?= $row["isbn"]?></td>
                         <td class="ano"><?= $row["ano"]?></td>
-                        <td class="nome-arquivo"><?= basename($row["file_path"])?></td>
+                        <td class="nome-arquivo"><?= $row["file_path"]?></td>
                         <td class="acoes"><button class="btn-update btn">Atualizar</button> <button class="btn-delete btn">Excluir</button> <a class="btn-viewer btn" href="<?= "../uploads/".basename($row["file_path"])?>" target="_blank">Ver</a></td>
                     </tr>
                     <?php endforeach;?>
