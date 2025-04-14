@@ -74,5 +74,6 @@
 - ~Mostrar Nome do Usuário Logado no painel~
 - ~Mudar a arquitetura de arquivos~
 - ~Adicionar filtros de consulta ao banco de dados~
-- **Responsividade no index**
+-  **Bugs de acesso aos arquivos do servidor**
+- Responsividade no index
 - Animação do InputText do Index
