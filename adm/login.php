@@ -41,7 +41,7 @@
                     <input type="submit" value="Entrar">
                 </div>
                 <div class="link-signin">
-                    <a href="/signin.php">Cadastre-se</a>
+                    <a href="signin.php">Cadastre-se</a>
                 </div>
                 <div class="logo-estacio">
                     <img src="../assets/img/logoEstacio2.png" width="96px" height="27px">
