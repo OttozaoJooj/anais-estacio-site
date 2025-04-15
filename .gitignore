@@ -25,3 +25,6 @@ Thumbs.db
 
 # Arquivo de Configuração do Apache2
 .htaccess
+
+# Arquivos PDF's de teste
+/uploads
