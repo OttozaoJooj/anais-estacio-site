@@ -163,7 +163,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['tipo-form'] === 'delete'){
             
             if($stmtDelete->execute()){
                 echo "Cláusula Delete Executada";
-                unlink("uploads/anais/$filePathToDelete");
+                unlink("../../uploads/$filePathToDelete");
                 header("location: ../adm.php");
 
             } else{
