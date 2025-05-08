@@ -59,15 +59,15 @@ function prepareModalInfo(ajaxAnaisData){
             let btnLinkDownload = document.querySelector(".btn-link-download")
 
             let anaisDataClicked = ajaxAnaisData[`ajax-anais-${idAnaisClicked}`]
-
+            console.log(anaisDataClicked)
             temaModal.textContent = anaisDataClicked.tema
             eventoModal.textContent = anaisDataClicked.evento
             isbnModal.textContent = anaisDataClicked.isbn
             instituicaoModal.textContent = anaisDataClicked.instituicao
             anoModal.textContent = anaisDataClicked.ano
             descricaoModal.textContent = anaisDataClicked.descricao
-            btnLinkViewerPDF.href = 'uploads' + anaisDataClicked.filePath.slice(56)
-            btnLinkDownload.href = 'uploads' + anaisDataClicked.filePath.slice(56)
+            btnLinkViewerPDF.href = 'uploads/' + anaisDataClicked.filePath
+            btnLinkDownload.href = 'uploads/' + anaisDataClicked.filePath
             
             //console.log(anaisDataClicked.filePath.slice(56))
 
@@ -146,16 +146,19 @@ $(function() {
     $("#search").on("input", function() {       
         
         let pesquisa = $("#search").val();
+        let searchFilterCurso = $('#search-filter').val();
 
-
-
+        
         if(pesquisa.trim() != ''){
             $.ajax({
                 url: "index_proc.php", 
                 type: "GET", 
-                data: { pesquisa: pesquisa.trim() }, 
+                data: { 
+                    pesquisa: pesquisa.trim(),
+                    searchFilterCurso: searchFilterCurso               
+                }, 
                 success: function(result) {
-                    
+                   
                     let anaisDataJSONParsed = JSON.parse(result)
                 
                     // If the result return nothing from ajax_proc.php
@@ -170,7 +173,7 @@ $(function() {
                     
                     renderAjaxAnais(ajaxAnaisData);
 
-                    prepareModalInfo(ajaxAnaisData);
+                    prepareModalInfo(ajaxAnaisData);  
                 },
                 error: function(e) {
                     

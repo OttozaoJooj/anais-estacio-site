@@ -7,7 +7,7 @@
 }
 
 
-p, h1, h2, h3, h4, h5, h6, span, input, button, a{
+p, h1, h2, h3, h4, h5, h6, span, input, button, a, select{
     color: var(--light-black);
     font-family: 'Montserrat', serif;
 
@@ -228,6 +228,26 @@ body{
     font-weight: 500;
 
     font-size: 1.4rem;
+}
+
+.result-anais > .search-anais > .search-filter{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2%;
+    background-color: white;
+    color: var(--light-blue-primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 15px 10px;
+    border-radius: 10px;
+    border: 2px solid var(--light-blue-primary);
+    outline: none;
+    
+}
+
+.result-anais > .search-anais > .search-filter > option{
+    font-weight: 600;
 }
 
 .result-anais > .result-anais-content{

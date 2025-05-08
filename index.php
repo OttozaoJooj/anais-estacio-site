@@ -74,7 +74,17 @@
                 <div class="result-anais">
                     <div class="search-anais">
                         <input type="search" name="search-anais" id="search" placeholder="Pesquisa por Instituição, Evento, Tema ou ISBN">
+                        <select id="search-filter" class="search-filter filter-curso">
+                            <option disabled>-- Curso --</option>
+                            <option value="0"  selected>Todos os Cursos</option>
+                            <option value="1">Análise e Desenvolvimento de Sistemas</option>
+                            <option value="2">Direito</option>
+                            <option value="3">Psicologia</option>
+                            <option value="4">Fisioterapia</option>
+                            <option value="5">Engenharia Civil</option>
+                            <option value="6">Administração</option>
 
+                        </select>
                     </div>
                     <div class="result-anais-content">
 <!--
