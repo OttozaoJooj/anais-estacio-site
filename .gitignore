@@ -21,7 +21,7 @@ Thumbs.db
 .idea/
 
 # Banco de Dados
-*.sql
+
 
 # Arquivo de Configuração do Apache2
 .htaccess
